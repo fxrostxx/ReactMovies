@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/fxrostxx/ReactMovies/static/css/main.83c5305e.css",
-    "main.js": "/fxrostxx/ReactMovies/static/js/main.52c154fc.js",
-    "static/js/453.6b239d62.chunk.js": "/fxrostxx/ReactMovies/static/js/453.6b239d62.chunk.js",
-    "static/media/logo.svg": "/fxrostxx/ReactMovies/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/fxrostxx/ReactMovies/index.html",
-    "main.83c5305e.css.map": "/fxrostxx/ReactMovies/static/css/main.83c5305e.css.map",
-    "main.52c154fc.js.map": "/fxrostxx/ReactMovies/static/js/main.52c154fc.js.map",
-    "453.6b239d62.chunk.js.map": "/fxrostxx/ReactMovies/static/js/453.6b239d62.chunk.js.map"
+    "main.css": "/ReactMovies/static/css/main.83c5305e.css",
+    "main.js": "/ReactMovies/static/js/main.8acef356.js",
+    "static/js/453.6b239d62.chunk.js": "/ReactMovies/static/js/453.6b239d62.chunk.js",
+    "static/media/logo.svg": "/ReactMovies/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ReactMovies/index.html",
+    "main.83c5305e.css.map": "/ReactMovies/static/css/main.83c5305e.css.map",
+    "main.8acef356.js.map": "/ReactMovies/static/js/main.8acef356.js.map",
+    "453.6b239d62.chunk.js.map": "/ReactMovies/static/js/453.6b239d62.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83c5305e.css",
-    "static/js/main.52c154fc.js"
+    "static/js/main.8acef356.js"
   ]
 }
