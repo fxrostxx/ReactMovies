@@ -9,7 +9,7 @@ function Movie(props)
                 <h3>{props.Title}</h3>
                 <div>
                     {props.Year}
-                    <span>{props.Type}</span>
+                    <span> {props.Type}</span>
                 </div>
             </div>
         </div>
