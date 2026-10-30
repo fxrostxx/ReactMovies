@@ -2,7 +2,7 @@
   "name": "react_movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/fxrostxx/ReactMovies/",
+  "homepage": "https://fxrostxx.github.io/ReactMovies/",
   "dependencies": {
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
