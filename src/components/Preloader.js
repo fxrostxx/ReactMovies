@@ -3,7 +3,7 @@ import './Preloader.css';
 function Preloader()
 {
     return (
-        <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div className="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     )
 }
 
