@@ -10,12 +10,12 @@ class Main extends React.Component
     {
         movies: []
     }
-    searchMovie = (query) =>
+    searchMovie = (query, type='all') =>
     {
         const apiKey = process.env.REACT_APP_API_KEY;
         if (query !== "")
         {
-            fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`)
+            fetch(`https://www.omdbapi.com/?s=${query}${type !== 'all' ? `&type=${type}` : ``}&apikey=${apiKey}`)
                 .then(response => response.json())
                 .then(data => this.setState({ movies: data.Search }));
         }
@@ -26,8 +26,9 @@ class Main extends React.Component
             <div className='main'>
                 <Search searchMovie={this.searchMovie} />
                 {
-                    this.state.movies == 0 ? <Preloader /> :
-                        <MovieList movies={this.state.movies} />
+                    this.state.movies == null ? <h1>Nothing</h1> :
+                        this.state.movies.length == 0 ? <Preloader /> :
+                            <MovieList movies={this.state.movies} />
                 }
             </div>
         )
