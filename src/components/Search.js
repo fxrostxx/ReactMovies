@@ -5,19 +5,45 @@ class Search extends React.Component
 {
     state =
     {
-        query: ""
+        query: "",
+        type: "all",
+        page: 1
     }
     handleKey = (event) =>
     {
         if (event.key === 'Enter')
-            this.props.searchMovie(this.state.query, this.state.type);
+            this.setState({ page: 1 }, () => this.props.searchMovie(this.state.query, this.state.type));
     }
     handleFilter = (event) =>
     {
         this.setState(() => ({ type: event.target.dataset.type }), () => ({ query: this.props.searchMovie(this.state.query, this.state.type) }));
     }
+    prevPage = () =>
+    {
+        this.setState
+        (
+            () => (this.state.page > 1 ? { page: this.state.page - 1 } : { page: 1 }),
+            () => { this.props.searchMovie(this.state.query, this.state.type, this.state.page) }
+        )
+    }
+    nextPage = () =>
+    {
+        this.setState
+        (
+            () => ({ page: this.state.page + 1 }),
+            () => { this.props.searchMovie(this.state.query, this.state.type, this.state.page) }
+        )
+    }
+    setPage = (pageNumber) =>
+    {
+        this.setState(() => ({ page: pageNumber }), () => { this.props.searchMovie(this.state.query, this.state.type, this.state.page) });
+    }
     render()
     {
+        let itemsPerPage = 10;
+        let totalPages = Math.ceil(this.props.totalCount / itemsPerPage);
+        let number = [];
+        for (let i = 0; i < totalPages; ++i) number.push(i + 1);
         return (
             <div>
                 <div className='search'>
@@ -34,6 +60,21 @@ class Search extends React.Component
                     <input type='radio' name='type' id='radio-movie' data-type='movie' checked={this.state.type === 'movie'} onChange={this.handleFilter} /><label htmlFor='radio-movie'>Movie</label>
                     <input type='radio' name='type' id='radio-series' data-type='series' checked={this.state.type === 'series'} onChange={this.handleFilter} /><label htmlFor='radio-series'>Series</label>
                     <input type='radio' name='type' id='radio-games' data-type='game' checked={this.state.type === 'game'} onChange={this.handleFilter} /><label htmlFor='radio-game'>Game</label>
+                </div>
+                <div className='pagination'>
+                    <button className='btn' onClick={this.prevPage}>Previous</button>
+                    <div className='items'>
+                        {
+                            number.slice(0, totalPages).map
+                            (
+                                (element, index) =>
+                                (
+                                    <button className={element === this.state.page ? "btn-current-page" : ""} onClick={() => (this.setPage(element))}>{element}</button>
+                                )
+                            )
+                        }
+                    </div>
+                    <button className='btn' onClick={this.nextPage}>Next</button>
                 </div>
             </div>
         )
